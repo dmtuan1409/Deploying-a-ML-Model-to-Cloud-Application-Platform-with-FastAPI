@@ -34,7 +34,7 @@ jobs:
     - name: Pull Data with DVC
       run: |
         dvc pull
-        dvc add --all
+        dvc add data/*
         dvc push -r myremote
     - name: Install dependencies
       run: |
