@@ -31,9 +31,12 @@ jobs:
     - name: Install DVC
       uses: iterative/setup-dvc@v1
     - name: Configure DVC
+      env: |
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        export AWS_ACCESS_KEY_ID='AKIAV4Q44JRC3LO3IKPY'
-        export AWS_SECRET_ACCESS_KEY='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'
+        aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+        aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
         dvc init
         dvc remote add -d myremote s3://mlops-udacity-project3/model
         git config --global user.email "thichhocchui1999@gmail.com"
