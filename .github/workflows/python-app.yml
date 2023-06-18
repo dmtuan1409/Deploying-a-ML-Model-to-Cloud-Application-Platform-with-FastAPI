@@ -38,7 +38,6 @@ jobs:
         aws-region: us-east-2
     - name: Configure DVC
       run: |
-        dvc remote add -d myremote s3://mlops-udacity-project3/model
         git config --global user.email "thichhocchui1999@gmail.com"
         git config --global user.name "dmtuan1409"
         git rm -r --cached data/*
