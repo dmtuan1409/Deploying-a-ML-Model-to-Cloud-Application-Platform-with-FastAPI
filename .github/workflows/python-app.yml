@@ -33,6 +33,8 @@ jobs:
         dvc remote add -d myremote s3://mlops-udacity-project3/model
     - name: Pull Data with DVC
       run: |
+        git rm -r --cached data/*
+        git commit -m "stop tracking data/*" 
         dvc pull
         dvc add data/*
         dvc push -r myremote
