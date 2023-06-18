@@ -37,6 +37,7 @@ jobs:
         git config --global user.name "dmtuan1409"
         git rm -r --cached data/*
         git commit -m "stop tracking data/*" 
+        pip install dvc_s3
         dvc pull
         dvc add data/*
         dvc push -r myremote
