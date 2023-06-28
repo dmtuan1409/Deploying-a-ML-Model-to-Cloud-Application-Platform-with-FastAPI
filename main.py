@@ -99,4 +99,4 @@ async def predict(input_data: InputData):
     #Inference 
     y = inference(model=model, X=X)
     output = lb.inverse_transform(y)[0]
-    return {"Output model: ",output}
+    return output

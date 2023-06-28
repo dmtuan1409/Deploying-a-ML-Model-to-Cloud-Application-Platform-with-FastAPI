@@ -17,7 +17,7 @@ cat_features = [
 ]
 
 # Add code to load in the data.
-data = load_data(path = r'../../data/census.csv')
+data = load_data(path = r'data/census.csv')
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
 # Process data
@@ -26,7 +26,7 @@ X_train, y_train, encoder, lb = process_data(
 )
 # Proces the test data with the process_data function.
 X_test, y_test, _, _ = process_data(
-    train, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
+    test, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
 )
 # Train and save a model.
 print("Starting training")
@@ -42,6 +42,6 @@ slice_performance(test, model, encoder, lb, compute_model_metrics, cat_features=
 
 # Save model
 print("Saving model")
-joblib.dump(model, '../../model/model.pkl')
-joblib.dump(encoder, '../../model/encoder.pkl')
-joblib.dump(lb, '../../model/lb.pkl')
+joblib.dump(model, 'model/model.pkl')
+joblib.dump(encoder, 'model/encoder.pkl')
+joblib.dump(lb, 'model/lb.pkl')
