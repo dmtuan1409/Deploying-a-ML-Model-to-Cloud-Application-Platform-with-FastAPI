@@ -59,7 +59,6 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy to render
     needs: [build]
     steps:
       - name: Wait for Render Deployment
