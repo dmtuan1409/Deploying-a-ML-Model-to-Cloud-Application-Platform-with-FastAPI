@@ -6,5 +6,5 @@ requests
 fastapi==0.63.0
 uvicorn
 gunicorn
-dvc_s3
 dvc
+dvc-s3
