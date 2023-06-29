@@ -2,7 +2,7 @@
 
 import requests
 
-url = "https://census-income-predict.onrender.com"
+url = "https://census-income-predict.onrender.com/predict"
 sample = {
             "age": 35,
             "workclass": "Private",
