@@ -1,3 +1,4 @@
+pip==23.0.1
 numpy
 pandas
 scikit-learn
@@ -7,4 +8,4 @@ fastapi==0.63.0
 uvicorn
 gunicorn
 dvc
-dvc-s3
+dvc-s3==2.23.0
